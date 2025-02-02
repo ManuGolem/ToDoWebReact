@@ -1,4 +1,5 @@
-import { Tareas } from "./Tareas";
+import { Tareas} from "./Components/Tarea";
+import { Footer} from "./Components/Footer";
 export function App() {
 	return (
 		<>
@@ -9,8 +10,9 @@ export function App() {
                 {/* Tareas Diarias */}
                 <Tareas text="Diarias"/>
                 {/* Tareas Semanales */}
-                <Tareas text="Semanales"/> 
+                {/* <Tareas text="Semanales"/>  */}
             </div>
+			<Footer/>
 		</>
 	);
 }
