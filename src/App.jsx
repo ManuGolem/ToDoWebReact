@@ -1,4 +1,4 @@
-import { Tareas} from "./Components/Tarea";
+import { Tarea} from "./Components/Tarea";
 import { Footer} from "./Components/Footer";
 export function App() {
 	return (
@@ -8,9 +8,9 @@ export function App() {
 			</h1>
             <div className="flex justify-center m-10 gap-2">
                 {/* Tareas Diarias */}
-                <Tareas text="Diarias"/>
+                <Tarea text="Diarias"/>
                 {/* Tareas Semanales */}
-                {/* <Tareas text="Semanales"/>  */}
+                {/* <Tarea text="Semanales"/>  */}
             </div>
 			<Footer/>
 		</>
