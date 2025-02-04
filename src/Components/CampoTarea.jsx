@@ -1,15 +1,13 @@
+import { Button } from "./Button";
 export function CampoTarea({ id, remove }) {
 	function removeTarea() {
 		remove(id);
 	}
 	return (
 		<div className="flex justify-center">
-			<p contentEditable="true" className="no-underline outline-none border-none ml-auto">
-				Escribe aqui
-			</p>
-			<button onClick={removeTarea} className="ml-auto hover:scale-125 hover:cursor-pointer">
-				<img className="w-[30px]" src="/delete.svg" alt="remove" />
-			</button>
+			<input type="checkbox" className="w-[30px] border-none outline-none no-underline"></input>
+			<input type="text" placeholder="Escribe aqui" className="no-underline outline-none ml-auto text-center rounded-2xl hover:bg-lime-200"></input>
+			<Button img="/delete.svg" funcion={removeTarea} tipo="remove" alt="remove" />
 		</div>
 	);
 }
