@@ -1,28 +1,49 @@
 import { useState } from "react";
 import { CampoTarea } from "./CampoTarea";
 import { Button } from "./Button";
+let id = 0;
 export function Tarea({ text }) {
 	const [tareas, setTareas] = useState([]);
+	const [texto,setText]=useState("");
 	const hayTareas = tareas.length;
-	const claseParrafos = hayTareas
-		? "text-center text-gray-400 font-bold hidden mt-5"
-		: "text-center text-gray-400 font-bold block mt-5";
+	const claseHayTareas = hayTareas
+		? "flex flex-col gap-5 mt-5 mb-5"
+		: "hidden";
 	function agregarNota() {
-		const id = tareas.length;
-		setTareas([...tareas, { id }]);
+		if(texto.trim()==="") return;
+		setTareas([...tareas, { id ,texto}]);
+		id++;
+		setText("");
+	}
+	function setTexto(e){
+		setText(e.target.value)
+	}
+	function detectarEnter(e){
+		if(e.key=="Enter"){
+			agregarNota();
+		}
 	}
 	function removeTarea(id) {
 		setTareas(tareas.filter((tarea) => tarea.id !== id));
 	}
 	return (
-		<div className="bg-lime-100 rounded-2xl p-5 grid justify-center items-center">
-			<h1 className="text-5xl font-bold text-center">Tareas {text}</h1>
+		<div className="bg-lime-100 rounded-2xl p-5 justify-center items-center w-full sm:w-[50%]">
+			<h1 className="text-2xl font-bold text-center sm:text-5xl ">Tareas {text}</h1>
 			<div className="text-center">
-				<Button img="/add.svg" funcion={agregarNota} tipo="add" />
-				<p className={claseParrafos}>Sin tareas</p>
-				<div className="flex flex-col gap-5 mt-5 mb-5">
+				<div className="flex mt-5 justify-center gap-2">
+					<input
+						type="text"
+						placeholder="Escriba aqui"
+						className="outline-none text-center rounded-2xl hover:bg-lime-200 grow"
+						value={texto}
+						onChange={setTexto}
+						onKeyDown={detectarEnter}
+					></input>
+					<Button img="/add.svg" funcion={agregarNota} tipo="add" />
+				</div>
+				<div className={claseHayTareas}>
 					{tareas.map((tarea) => (
-						<CampoTarea key={tarea.id} id={tarea.id} remove={removeTarea} />
+						<CampoTarea key={tarea.id} id={tarea.id} remove={removeTarea} texto={tarea.texto} />
 					))}
 				</div>
 			</div>
