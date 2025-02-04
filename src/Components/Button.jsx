@@ -1,6 +1,6 @@
 export function Button({img,funcion,tipo,alt}) {
 	const botonTipo= {
-		"add":"mt-6 hover:bg-violet-500",
+		"add": "hover:bg-violet-500 ml-auto",
 		"remove" :"ml-auto hover:bg-red-500",
 		"checkbox" :""
 	}
