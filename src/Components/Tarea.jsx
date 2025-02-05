@@ -29,7 +29,7 @@ export function Tarea({ text }) {
 	return (
 		<div className="bg-lime-100 rounded-2xl p-5 justify-center items-center w-full sm:w-[50%] flex flex-col">
 			<input type="text" className="text-2xl font-bold sm:text-5xl outline-none w-full text-center" defaultValue={text}></input>
-			<div className="text-center">
+			<div className="text-center w-full">
 				<div className="flex mt-5 justify-center gap-2">
 					<input
 						type="text"
