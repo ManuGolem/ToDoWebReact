@@ -27,8 +27,8 @@ export function Tarea({ text }) {
 		setTareas(tareas.filter((tarea) => tarea.id !== id));
 	}
 	return (
-		<div className="bg-lime-100 rounded-2xl p-5 justify-center items-center w-full sm:w-[50%]">
-			<h1 className="text-2xl font-bold text-center sm:text-5xl ">Tareas {text}</h1>
+		<div className="bg-lime-100 rounded-2xl p-5 justify-center items-center w-full sm:w-[50%] flex flex-col">
+			<input type="text" className="text-2xl font-bold sm:text-5xl outline-none w-full text-center" defaultValue={text}></input>
 			<div className="text-center">
 				<div className="flex mt-5 justify-center gap-2">
 					<input
