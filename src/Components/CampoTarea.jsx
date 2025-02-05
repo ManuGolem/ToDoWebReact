@@ -12,7 +12,7 @@ export function CampoTarea({ id, remove, texto }) {
 	return (
 		<div className="flex justify-center">
 			<Button
-				img={check ? "checkbox-check.svg" : "/checkbox-unchecked.svg"}
+				img={check ? "checkbox-check.svg" : "checkbox-unchecked.svg"}
 				funcion={completarTarea}
 				tipo="checkbox"
 				alt="checkbox"
