@@ -23,7 +23,7 @@ export function CampoTarea({ id, remove, texto }) {
 				className={(check ? "line-through text-lime-500 hover:text-black" : "").concat(" ", clasesInputBase)}
 				defaultValue={texto}
 			></input>
-			<Button img="/delete.svg" funcion={removeTarea} tipo="remove" alt="remove" />
+			<Button img="delete.svg" funcion={removeTarea} tipo="remove" alt="remove" />
 		</div>
 	);
 }

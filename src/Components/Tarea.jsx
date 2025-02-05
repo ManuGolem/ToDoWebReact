@@ -39,7 +39,7 @@ export function Tarea({ text }) {
 						onChange={setTexto}
 						onKeyDown={detectarEnter}
 					></input>
-					<Button img="/add.svg" funcion={agregarNota} tipo="add" />
+					<Button img="add.svg" funcion={agregarNota} tipo="add" />
 				</div>
 				<div className={claseHayTareas}>
 					{tareas.map((tarea) => (
